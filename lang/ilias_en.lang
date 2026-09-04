@@ -1,0 +1,11 @@
+/ 
+// English Language File for MattermostCourseBot Plugin
+//
+
+<!-- language file start -->
+
+// Configuration settings
+settings_webhook_url#:#Webhook URL
+settings_webhook_url_info#:#The external API endpoint that will receive course update notifications
+settings_api_key#:#API Key
+settings_api_key_info#:#Authentication token for the webhook endpoint
