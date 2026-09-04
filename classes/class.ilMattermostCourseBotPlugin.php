@@ -68,6 +68,24 @@ class ilMattermostCourseBotPlugin extends ilEventHookPlugin
 
 		parent::afterDeactivation();
 	}
+
+	protected function uninstallCustom(): void
+	{
+		global $DIC;
+		$db = $DIC->database();
+
+		if ($db->tableExists('il_mmcoursebot_table')) {
+			$db->dropTable('il_mmcoursebot_table');
+		}
+		
+		if ($db->tableExists('il_mmcoursebot_cron')) {
+			$db->dropTable('il_mmcoursebot_cron');
+		}
+
+		if ($db->tableExists('il_mmcoursebot_watch')) {
+			$db->dropTable('il_mmcoursebot_watch');
+		}
+	}
 	
 	public function getPluginName() : string
 	{
